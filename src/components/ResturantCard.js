@@ -1,15 +1,20 @@
+import { BASE_IMAGE_URL } from "../utils/constants";
+
 const ResturantCard = ({ prodData }) => {
   // console.log(prodData);
-  let { title, image, price, category, rating, id, description } = prodData;
-  let destructuredRating = rating.rate;
+  let { name, avgRatingString, cloudinaryImageId, costForTwo } = prodData.info;
+  // let destructuredRating = rating.rate;
+  // console.log(BASE_IMAGE_URL);
+  // console.log(cloudinaryImageId);
   return (
     <div className="oneres-card">
-      <img src={image} style={{ height: "30px" }} />
-      <h1>{title}</h1>
-      <p style={{ width: "100%" }}>{description}</p>
-      <p>{destructuredRating} stars</p>
-      <p>{category}</p>
-      <p>${price}</p>
+      <img
+        src={`${BASE_IMAGE_URL}/${cloudinaryImageId}`}
+        style={{ height: "200px" }}
+      />
+      <h1>{name}</h1>
+      <p>{avgRatingString} stars</p>
+      <p>${costForTwo}</p>
     </div>
   );
 };
