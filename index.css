@@ -36,3 +36,9 @@
   border: 8px solid yellow;
   cursor: pointer;
 }
+
+.filter-btn {
+  margin: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}

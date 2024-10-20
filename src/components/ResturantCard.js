@@ -1,12 +1,15 @@
-const ResturantCard = ({ name, ingred, ratings, min }) => {
-  // console.log(props);
+const ResturantCard = ({ prodData }) => {
+  // console.log(prodData);
+  let { title, image, price, category, rating, id, description } = prodData;
+  let destructuredRating = rating.rate;
   return (
     <div className="oneres-card">
-      <img />
-      <h1>{name}</h1>
-      <h2>{ingred}</h2>
-      <h4>{ratings} stars</h4>
-      <p>{min} minutes</p>
+      <img src={image} style={{ height: "30px" }} />
+      <h1>{title}</h1>
+      <p style={{ width: "100%" }}>{description}</p>
+      <p>{destructuredRating} stars</p>
+      <p>{category}</p>
+      <p>${price}</p>
     </div>
   );
 };
